@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "battle.Battle",
+            "projectName": "alien-human-battle",
+            "preLaunchTask": "Run Build",
+            "args": []
+        }
+    ]
+}
