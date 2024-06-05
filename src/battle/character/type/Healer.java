@@ -20,7 +20,7 @@ public abstract class Healer implements Disableable, Combatant {
 	public Healer(int healingPower) {
 		//TODO: PART 2
 		this.healingPower = -1;
-		this.disabledTurns = Integer.MAX_VALUE;
+		this.disabledTurns = 0;
 	}
 	
 	/**
@@ -31,7 +31,7 @@ public abstract class Healer implements Disableable, Combatant {
 	 * @return how much health the person gained
 	 */
 	public int heal(Damageable teammate) {
-		int gainedHealth = RandomUtil.randomInclusive(healingPower / 2, healingPower)
+		int gainedHealth = RandomUtil.randomInclusive(healingPower / 2, healingPower);
 		//TODO: PART 2
 		return gainedHealth;
 	}
