@@ -1,5 +1,6 @@
 package battle.character.type;
 
+import battle.RandomUtil;
 import battle.character.Combatant;
 import battle.character.Damageable;
 
@@ -21,9 +22,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	public Fighter(int maxHealth, int attackPower) {
 		//TODO: PART 1
-		this.maxHealth = -1;
-		this.health = -1;
-		this.attackPower = -1;
+		this.maxHealth = 42;
+		this.health = 42;
+		this.attackPower = 42;
 	}
 	
 	/**
@@ -34,8 +35,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	 * @return the amount of damage they do; this should always be negative
 	 */
 	public int attack(Damageable opponent) {
+		int damaged = RandomUtil.randomInclusive(attackPower / 2, attackPower);
 		//TODO: PART 1
-		return -1;
+		return damaged;
 	}
 	
 	/**
@@ -93,6 +95,9 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	@Override
 	public boolean isAlive() {
+		if (health > 0) {
+			return true;
+		}
 		//TODO: PART 1
 		return false;
 	}
@@ -115,7 +120,6 @@ public abstract class Fighter implements Combatant, Damageable {
 	 */
 	@Override
 	public boolean canTakeTurn() {
-		//TODO: PART 1
-		return false;
+		return health > 0;
 	}
 }

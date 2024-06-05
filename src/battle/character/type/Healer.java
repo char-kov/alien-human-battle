@@ -1,5 +1,6 @@
 package battle.character.type;
 
+import battle.RandomUtil;
 import battle.character.Combatant;
 import battle.character.Damageable;
 import battle.character.Disableable;
@@ -30,8 +31,9 @@ public abstract class Healer implements Disableable, Combatant {
 	 * @return how much health the person gained
 	 */
 	public int heal(Damageable teammate) {
+		int gainedHealth = RandomUtil.randomInclusive(healingPower / 2, healingPower)
 		//TODO: PART 2
-		return -1;
+		return gainedHealth;
 	}
 	
 	/**
